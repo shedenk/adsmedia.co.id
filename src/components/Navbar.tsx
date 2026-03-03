@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/adsmedia-logo.jpg";
 
 const navLinks = [
   { href: "#home", label: "Home" },
@@ -36,9 +37,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="#home" className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-xl">A</span>
-            </div>
+            <img src={logo} alt="Adsmedia" className="w-10 h-10 rounded-xl object-contain" />
             <span className={`font-bold text-xl ${isScrolled ? "text-foreground" : "text-primary-foreground"}`}>
               Adsmedia
             </span>
