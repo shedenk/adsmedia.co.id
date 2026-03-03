@@ -1,4 +1,5 @@
 import { MessageSquare } from "lucide-react";
+import logo from "@/assets/adsmedia-logo.jpg";
 
 const Footer = () => {
   return (
@@ -8,9 +9,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-2">
             <a href="#home" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xl">A</span>
-              </div>
+              <img src={logo} alt="Adsmedia" className="w-10 h-10 rounded-xl object-contain" />
               <span className="font-bold text-xl text-secondary-foreground">Adsmedia</span>
             </a>
             <p className="text-secondary-foreground/70 max-w-md mb-6">
