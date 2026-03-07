@@ -21,8 +21,8 @@ const services = [
   },
   {
     icon: Smartphone,
-    title: "WhatsApp Device",
-    description: "Kirim dan Kelola WhatsApp dengan Device Sendiri. Support multi device dengan fitur inbox lengkap.",
+    title: "WhatsApp Official Api",
+    description: "Kirim dan Kelola WhatsApp dengan Official Api.",
     color: "accent",
   },
   {

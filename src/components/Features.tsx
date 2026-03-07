@@ -25,7 +25,7 @@ const features = [
   { icon: FileText, title: "Template", description: "Template pesan siap pakai" },
   { icon: Clock, title: "Schedule", description: "Jadwalkan pengiriman pesan" },
   { icon: MessageSquare, title: "SMS Broadcast", description: "Kirim pesan massal" },
-  { icon: Smartphone, title: "WhatsApp Device", description: "Kelola device WhatsApp" },
+  { icon: Smartphone, title: "WhatsApp Official Api", description: "Kelola WhatsApp Official Api" },
 ];
 
 const Features = () => {

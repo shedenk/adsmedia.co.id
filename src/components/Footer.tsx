@@ -49,7 +49,7 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-secondary-foreground mb-4">Layanan</h4>
             <ul className="space-y-3">
-              {["SMS OTP", "WhatsApp OTP", "Bulk SMS", "SMS LBA", "WhatsApp Device", "Mobile Ads"].map((service) => (
+              {["SMS OTP", "WhatsApp OTP", "SMS LBA", "WhatsApp Official Api", "Mobile Ads"].map((service) => (
                 <li key={service}>
                   <span className="text-secondary-foreground/70">
                     {service}
@@ -67,10 +67,10 @@ const Footer = () => {
               © {new Date().getFullYear()} PT. Adsmedia Digital Indonesia. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm">
-              <a href="#" className="text-secondary-foreground/60 hover:text-primary transition-colors">
-                Privacy Policy
+              <a href="/sla" className="text-secondary-foreground/60 hover:text-primary transition-colors">
+                Service Level Agreement
               </a>
-              <a href="#" className="text-secondary-foreground/60 hover:text-primary transition-colors">
+              <a href="/terms" className="text-secondary-foreground/60 hover:text-primary transition-colors">
                 Terms of Service
               </a>
             </div>

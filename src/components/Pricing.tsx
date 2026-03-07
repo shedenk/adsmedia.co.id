@@ -4,23 +4,24 @@ import { Check, Zap } from "lucide-react";
 const pricingPlans = [
   {
     name: "Layanan OTP",
-    price: "Rp.300",
+    price: "Rp.500",
     unit: "/ OTP",
     description: "Verifikasi aman untuk aplikasi Anda",
     features: [
       "SMS OTP",
       "WhatsApp Official OTP",
-      "WhatsApp Reguler OTP",
+      "SMS Notifikasi",
+      "WhatsApp Reguler Notifikasi",
       "API Support",
       "Stabil & Reliable",
     ],
     popular: false,
   },
   {
-    name: "WhatsApp Device",
-    price: "Rp.89.000",
-    unit: "/ Device",
-    description: "Kelola WhatsApp dengan device sendiri",
+    name: "WhatsApp Official Api",
+    price: "Rp.450",
+    unit: "/ Message",
+    description: "Kelola WhatsApp dengan Official Api",
     features: [
       "Support Multi Device",
       "Inbox Management",
@@ -32,7 +33,7 @@ const pricingPlans = [
   },
   {
     name: "Mobile Ads",
-    price: "Rp.300",
+    price: "Rp.250",
     unit: "/ Pesan",
     description: "Jangkau target market Anda",
     features: [
