@@ -30,12 +30,12 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold text-secondary-foreground mb-4">Quick Links</h4>
+            <h4 className="font-semibold text-secondary-foreground mb-4">Company</h4>
             <ul className="space-y-3">
-              {["About", "Services", "Features", "Pricing", "FAQ", "Contact"].map((link) => (
+              {["About", "Contact"].map((link) => (
                 <li key={link}>
                   <a 
-                    href={`/#${link.toLowerCase()}`}
+                    href={link === "Blog" ? "/blog" : `/#${link.toLowerCase()}`}
                     className="text-secondary-foreground/70 hover:text-primary transition-colors"
                   >
                     {link}
@@ -44,12 +44,11 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-
           {/* Services */}
           <div>
-            <h4 className="font-semibold text-secondary-foreground mb-4">Layanan</h4>
+            <h4 className="font-semibold text-secondary-foreground mb-4">Services</h4>
             <ul className="space-y-3">
-              {["SMS OTP", "WhatsApp OTP", "SMS LBA", "WhatsApp Official Api", "Mobile Ads"].map((service) => (
+              {["SMS OTP", "WhatsApp OTP", "WhatsApp Official Api", "Mobile Ads"].map((service) => (
                 <li key={service}>
                   <span className="text-secondary-foreground/70">
                     {service}

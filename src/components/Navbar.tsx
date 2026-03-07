@@ -1,21 +1,23 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/adsmedia-logo.jpg";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/#about", label: "About" },
   { href: "/#services", label: "Services" },
   { href: "/#features", label: "Features" },
   { href: "/#pricing", label: "Pricing" },
   { href: "/#faq", label: "FAQ" },
-  { href: "/#contact", label: "Contact" },
+  { href: "/blog", label: "Blog" },
 ];
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,20 +27,19 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const isTransparent = isHomePage && !isScrolled;
+  const navBackground = isTransparent ? "bg-transparent py-5" : "bg-card/95 backdrop-blur-lg shadow-md py-3 border-b";
+  const textColor = isTransparent ? "text-primary-foreground/90" : "text-foreground";
+  const logoColor = isTransparent ? "text-primary-foreground" : "text-foreground";
+
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-card/95 backdrop-blur-lg shadow-md py-3"
-          : "bg-transparent py-5"
-      }`}
-    >
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navBackground}`}>
       <div className="container-custom">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="/" className="flex items-center gap-2">
             <img src={logo} alt="Adsmedia" className="w-10 h-10 rounded-xl object-contain" />
-            <span className={`font-bold text-xl ${isScrolled ? "text-foreground" : "text-primary-foreground"}`}>
+            <span className={`font-bold text-xl ${logoColor}`}>
               Adsmedia
             </span>
           </a>
@@ -49,9 +50,7 @@ const Navbar = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-primary link-underline ${
-                  isScrolled ? "text-foreground" : "text-primary-foreground/90"
-                }`}
+                className={`text-sm font-medium transition-colors hover:text-primary link-underline ${textColor}`}
               >
                 {link.label}
               </a>
@@ -61,7 +60,7 @@ const Navbar = () => {
           {/* CTA Button */}
           <div className="hidden lg:flex items-center gap-4">
             <Button
-              variant={isScrolled ? "gradient" : "hero"}
+              variant={isTransparent ? "hero" : "gradient"}
               size="lg"
               asChild
             >
@@ -77,9 +76,9 @@ const Navbar = () => {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
-              <X className={isScrolled ? "text-foreground" : "text-primary-foreground"} size={24} />
+              <X className={logoColor} size={24} />
             ) : (
-              <Menu className={isScrolled ? "text-foreground" : "text-primary-foreground"} size={24} />
+              <Menu className={logoColor} size={24} />
             )}
           </button>
         </div>
@@ -87,7 +86,7 @@ const Navbar = () => {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="lg:hidden mt-4 pb-4 animate-fade-up">
-            <div className="flex flex-col gap-4 bg-card rounded-xl p-6 shadow-lg">
+            <div className="flex flex-col gap-4 bg-card rounded-xl p-6 shadow-lg border">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
