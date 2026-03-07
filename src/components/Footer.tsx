@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           {/* Brand */}
           <div className="md:col-span-2">
-            <a href="#home" className="flex items-center gap-2 mb-4">
+            <a href="/" className="flex items-center gap-2 mb-4">
               <img src={logo} alt="Adsmedia" className="w-10 h-10 rounded-xl object-contain" />
               <span className="font-bold text-xl text-secondary-foreground">Adsmedia</span>
             </a>
@@ -35,7 +35,7 @@ const Footer = () => {
               {["About", "Services", "Features", "Pricing", "FAQ", "Contact"].map((link) => (
                 <li key={link}>
                   <a 
-                    href={`#${link.toLowerCase()}`}
+                    href={`/#${link.toLowerCase()}`}
                     className="text-secondary-foreground/70 hover:text-primary transition-colors"
                   >
                     {link}
